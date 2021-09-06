@@ -19,7 +19,7 @@ import './style.scss';
 
 // == Composant
 function Recipe() {
-  const recipes = useSelector(state => findRecipe(state.recipes.list, 'crepes-raffinees'));
+  const recipes = useSelector((state) => findRecipe(state.recipes.list, 'crepes-raffinees'));
 
   if (!recipe) {
     return <Redirect to="/error" />;

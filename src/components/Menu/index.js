@@ -1,10 +1,10 @@
-import React from 'react';
+// import React from 'react';
 import { useSelector } from 'react-redux';
 
 import './style.scss';
 
 const Menu = () => {
-  const recipes = useSelector(state => state.recipes);
+  const recipes = useSelector((state) => state.recipes);
   return (
     <nav className="menu">
       <a
@@ -13,7 +13,7 @@ const Menu = () => {
       >
         Accueil
       </a>
-      {recipes.map((recipe) => (
+      {recipes.list.map((recipe) => (
         <a
           key={recipe.id}
           className="menu-link"
