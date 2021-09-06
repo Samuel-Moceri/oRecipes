@@ -6,7 +6,7 @@ import AppHeader from 'src/components/AppHeader';
 import Content from 'src/components/Content';
 
 const Home = () => {
-  const recipes = useSelector(state => state.recipes.list);
+  const recipes = useSelector((state) => state.recipes.list);
   return (
     <Page>
       <AppHeader />

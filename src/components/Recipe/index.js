@@ -1,7 +1,7 @@
 /* eslint-disable arrow-body-style */
 // == Import : npm
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 // == Import : local
@@ -19,7 +19,8 @@ import './style.scss';
 
 // == Composant
 function Recipe() {
-  const recipes = useSelector((state) => findRecipe(state.recipes.list, 'crepes-raffinees'));
+  const { slug } = useParams();
+  const recipe = useSelector((state) => findRecipe(state.recipes.list, slug));
 
   if (!recipe) {
     return <Redirect to="/error" />;

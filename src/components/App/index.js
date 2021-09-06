@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Route } from 'react-router-dom';
+
 import Menu from 'src/components/Menu';
 import Home from 'src/components/Home';
-// import Recipe from 'src/components/Recipe';
-// import Error from 'src/components/Error';
+import Recipe from 'src/components/Recipe';
+import Error from 'src/components/Error';
 
 import Loading from './Loading';
 
@@ -17,9 +19,18 @@ function App(props) {
   return (
     <div className="app">
       <Menu />
-      <Home />
-      {/* <Recipe /> */}
-      {/* <Error /> */}
+
+      <Route path="/" exact>
+        <Home />
+      </Route>
+
+      <Route path="/recipe/:slug" exact>
+        <Recipe />
+      </Route>
+
+      <Route>
+        <Error />
+      </Route>
     </div>
   );
 }
