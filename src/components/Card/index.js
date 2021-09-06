@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 
@@ -13,7 +14,7 @@ const Card = ({
     <div className="card-content">
       <h2 className="card-title">{title}</h2>
       <p className="card-desc">Difficulté : {difficulty}</p>
-      <a href={`/recipe/${slug}`} className="card-link">Voir la recette</a>
+      <Link to={`/recipe/${slug}`} className="card-link">Voir la recette</Link>
     </div>
   </article>
 );
