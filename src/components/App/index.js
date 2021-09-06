@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Menu from 'src/components/Menu';
 import Home from 'src/components/Home';
@@ -19,18 +19,19 @@ function App(props) {
   return (
     <div className="app">
       <Menu />
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
 
-      <Route path="/" exact>
-        <Home />
-      </Route>
+        <Route path="/recipe/:slug" exact>
+          <Recipe />
+        </Route>
 
-      <Route path="/recipe/:slug" exact>
-        <Recipe />
-      </Route>
-
-      <Route>
-        <Error />
-      </Route>
+        <Route>
+          <Error />
+        </Route>
+      </Switch>
     </div>
   );
 }

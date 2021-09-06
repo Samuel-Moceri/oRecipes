@@ -22,6 +22,7 @@ function Recipe() {
   const { slug } = useParams();
   const recipe = useSelector((state) => findRecipe(state.recipes.list, slug));
 
+  // dans le cas où aucune recette n'est trouvée on redirige vers la route d'erreur
   if (!recipe) {
     return <Redirect to="/error" />;
   }
