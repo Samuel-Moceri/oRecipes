@@ -22,6 +22,9 @@ const ajax = (store) => (next) => (action) => {
         // always executed
       });
   }
+  else if (action.type === 'LOGIN') {
+    console.log('appel de l\'API');
+  }
   next(action);
 };
 

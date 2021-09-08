@@ -2,11 +2,18 @@
   Objectif : gérer une authentification -> une connexion
   - il faut gérer des champs controlés pour l'email et le mdp pour avoir les infos dans le state
   - à la soumission du form on va traduire l'intention de se connecter dans un middleware
+    - poser un écouteur au submit
+    - passer la foncion capable de dispatcher via les props
+      pour garder les branchements hors de LoginForm
+    - dispatcher une action au submit
+    - créer le middleware
+    - le donner au store
+    - traduire l'action dans le middleware cf étape suivante
   - dans le middleware on va faire l'appel à l'api pour envoyer le couple email/mdp
   - en fonction de la réponse de l'api on passera notre une info de le state
-  à true pour dire qu'on est connecté
-  - on va brancher nos composants en lecture via le hook de react-reduc useSelector
-  pour récupérer l'info du state et la représenter
+    à true pour dire qu'on est connecté
+  - on va brancher nos composants en lecture via le hook de react-redux useSelector
+    pour récupérer l'info du state et la représenter
 */
 
 import PropTypes from 'prop-types';
@@ -25,6 +32,7 @@ const LoginForm = ({
   loggedMessage,
 }) => {
   const handleSubmit = (evt) => {
+    console.log('maintenant je veux dispatcher');
     evt.preventDefault();
     handleLogin();
   };

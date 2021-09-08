@@ -10,11 +10,20 @@ const AppHeader = () => {
   const dispatch = useDispatch();
 
   const changeField = (value, key) => {
-    // console.log(value, key);
     dispatch({
       type: 'CHANGE_VALUE',
       value: value,
       key: key,
+      // en es6 quand on met une propriété qui a pour valeur
+      // la valeur d'une variable possédant le meme nom que la clé on peut abréger
+      // value,
+      // key,
+    });
+  };
+
+  const login = () => {
+    dispatch({
+      type: 'LOGIN',
     });
   };
 
@@ -25,6 +34,7 @@ const AppHeader = () => {
         email={email}
         password={password}
         changeField={changeField}
+        handleLogin={login}
       />
     </header>
   );
