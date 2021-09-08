@@ -34,6 +34,10 @@ const ajax = (store) => (next) => (action) => {
     })
       .then((response) => {
         console.log('reaction en cas de succès');
+        store.dispatch({
+          type: 'SAVE_USER',
+          pseudo: response.data.pseudo,
+        });
       })
       .catch((error) => {
         console.error(error);

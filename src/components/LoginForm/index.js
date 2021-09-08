@@ -10,7 +10,7 @@
     - le donner au store
     - traduire l'action dans le middleware cf étape suivante
   - dans le middleware on va faire l'appel à l'api pour envoyer le couple email/mdp
-  - en fonction de la réponse de l'api on passera notre une info de le state
+  - en fonction de la réponse de l'api on passera une info du state
     à true pour dire qu'on est connecté
   - on va brancher nos composants en lecture via le hook de react-redux useSelector
     pour récupérer l'info du state et la représenter
@@ -32,7 +32,7 @@ const LoginForm = ({
   loggedMessage,
 }) => {
   const handleSubmit = (evt) => {
-    console.log('maintenant je veux dispatcher');
+    // console.log('maintenant je veux dispatcher');
     evt.preventDefault();
     handleLogin();
   };

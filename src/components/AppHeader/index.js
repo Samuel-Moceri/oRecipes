@@ -7,6 +7,8 @@ import LoginForm from 'src/components/LoginForm';
 const AppHeader = () => {
   const email = useSelector((state) => state.user.email);
   const password = useSelector((state) => state.user.password);
+  const logged = useSelector((state) => state.user.logged);
+  const pseudo = useSelector((state) => state.user.pseudo);
   const dispatch = useDispatch();
 
   const changeField = (value, key) => {
@@ -35,6 +37,8 @@ const AppHeader = () => {
         password={password}
         changeField={changeField}
         handleLogin={login}
+        isLogged={logged}
+        loggedMessage={`Connecté en tant que ${pseudo}`}
       />
     </header>
   );
