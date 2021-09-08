@@ -20,6 +20,12 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         pseudo: action.pseudo,
       };
+    case 'LOGOUT':
+      return {
+        ...state,
+        logged: false,
+        pseudo: '',
+      };
     default:
       return state;
   }

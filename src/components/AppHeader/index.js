@@ -29,6 +29,12 @@ const AppHeader = () => {
     });
   };
 
+  const logout = () => {
+    dispatch({
+      type: 'LOGOUT',
+    });
+  };
+
   return (
     <header className="header">
       <img src={logo} className="header-logo" alt="Logo oRecipes" />
@@ -39,6 +45,7 @@ const AppHeader = () => {
         handleLogin={login}
         isLogged={logged}
         loggedMessage={`Connecté en tant que ${pseudo}`}
+        handleLogout={logout}
       />
     </header>
   );
